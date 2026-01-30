@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
+/* ESTILOS BASE (Escritorio) */
 body {
     font-family: 'Montserrat', sans-serif;    
     background-color: #0a0a0a;
@@ -15,7 +16,7 @@ body {
     padding: 20px 30px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    width: 300px;
+    width: 300px; /* Ancho fijo para PC */
 }
 
 h2 {
@@ -37,22 +38,24 @@ h2 {
 
 .login-input {
     width: 100%;
-    padding: 8px;
+    padding: 10px; /* Un poco más de padding por defecto */
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    font-size: 16px; /* Evita zoom automático en iOS */
 }
 
 .login-submit-btn {
     margin-top: 10px;
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     background: #ff3131;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
+    transition: background 0.3s ease;
 }
 
 .login-submit-btn:hover {
@@ -68,6 +71,24 @@ h2 {
     text-decoration: none;
 }
 
-.login-forgot:hover {
-    text-decoration: underline;
+/* --- MEDIA QUERY PARA MÓVIL --- */
+@media (max-width: 480px) {
+    .login-container {
+        width: 85%; /* El contenedor ocupa casi todo el ancho */
+        padding: 30px 20px; /* Ajustamos espacio interno */
+        border-radius: 12px; /* Bordes un poco más suaves para móvil */
+    }
+
+    .login-input {
+        padding: 14px; /* Área de escritura más grande (fácil de tocar) */
+    }
+
+    .login-submit-btn {
+        padding: 15px; /* Botón más alto para el dedo */
+        font-size: 18px; /* Texto un poco más grande */
+    }
+
+    h2 {
+        font-size: 24px;
+    }
 }
